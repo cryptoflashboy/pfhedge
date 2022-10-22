@@ -28,8 +28,8 @@ if __name__ == "__main__":
     torch.manual_seed(42)
     model = MultiLayerPerceptron()
     hedger = Hedger(model, ["log_moneyness", "expiry_time", "volatility"])
-    hedger.fit(option, n_paths=10000, n_epochs=200)
-    price = hedger.price(option, n_paths=10000, n_times=10)
+    hedger.fit(option, n_paths=5000, n_epochs=100)
+    price = hedger.price(option, n_paths=5000, n_times=10)
     print(f"Price={price:.5e}")
 
     # Fit and price: stock and variance swap
